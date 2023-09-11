@@ -1,0 +1,16 @@
+body {
+   background-color: rgb(204, 204, 204);
+ }
+ h1 {
+  color: antiquewhite;
+  }
+  p {  
+    color: aquamarine;
+   }
+   .lmao{
+    background-color: tomato;
+    color: aqua;
+    border: 20px solid black;
+    margin: 20px;
+    padding: 20px;
+   }
