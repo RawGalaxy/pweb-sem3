@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css@?family=LeagueSpartan-Light;wght@300;400;500;600;700;800;900&display=swap');
+@font-face {
+  font-family: lma;
+  src: url(/font/LeagueSpartan-Bold.otf);
+}
+@font-face {
+  font-family: pro;
+  src: url(/font/LeagueSpartan-Light.ttf);
+}
+@keyframes slideInBottom {
+  0% { 
+    transform: translateY(100%);
+    opacity: 0; /* Starts off invisible */
+  }
+  100% { 
+    transform: translateY(0); /* Ends at its normal position */
+    opacity: 1; /* Ends fully visible */
+  }
+}
+@keyframes slideInLeft {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); } /* Ends at its normal position */
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'LeagueSpartan-Light', pro;
+  scroll-behavior: smooth;
+}
+:root {
+  --delay-increment: 0.25s;  /* set a delay increment */
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn ease 2s forwards;
+  -webkit-animation: fadeIn ease 3s forwards;
+}
+.quick-fade-in {
+  opacity: 0;
+  animation: fadeIn ease 0.5s forwards;
+  -webkit-animation: fadeIn ease 0.5s forwards;
+}
+.slide-in-left {
+  transform: translateX(-100%);  
+  animation: slideInLeft 1s forwards;
+  /* Use the calc function with CSS variable --i to calculate animation-delay */
+  animation-delay: calc(var(--delay-increment) * var(--i, 0)); 
+}
+.slide-in-bottom {
+  transform: translateY(100%);  /* Starts off the screen at the bottom */
+  opacity: 0; /* Starts off invisible */
+  animation: slideInBottom 1s forwards;
+  animation-delay: calc(var(--delay-increment) * var(--i, 0)); 
+}
+.logo, .navbare{
+  display: flex;
+  align-items: center;
+}
+.header{
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 5%;
+  background-color: rgb(68, 87, 255);
+  color:white;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.logo p{
+  margin-top: 10px;
+}
+.navbare p{
+  font-size: 15px;
+  color:white;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 25px;
+}
+.icon-center {
+  vertical-align: middle;
+}
+.center-section{
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+}
+.row{
+  display: flex;
+  align-items: center;
+}
+.other-center{
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+}
+.other-center p{
+  font-family: lma;
+  
+}
+.img-underlap {
+  position: relative;
+}
+
+.img-underlap::before {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 170px;
+  width: 64%;
+  height:93%;
+  background: rgb(228, 228, 228);
+  z-index: -1;
+}
+
+.img-fluid {
+  display: block;
+}
+.img-underlap::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 65px;
+  width: 90px; 
+  height: 120px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><circle cx="5" cy="5" r="2" fill="rgb(168, 168, 168)"/></svg>');
+  background-size: 10px 10px;
+  z-index: -1;
+}
+/* Initial state */
+.btn {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for animations */
+}
+
+/* Hover state */
+.btn:hover {
+  transform: scale(1.05); /* Enlarge the button to 110% of its original size */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Shadow beneath the button */
+}
+.other-center img{
+  width: 100px
+}
